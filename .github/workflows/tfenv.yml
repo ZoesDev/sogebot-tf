@@ -1,0 +1,15 @@
+name: tfsec
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+jobs:
+  tfsec:
+    name: tfsec sarif report
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@master
+
