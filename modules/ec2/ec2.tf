@@ -16,6 +16,16 @@ resource "local_sensitive_file" "pem_file" {
 }
 
 
+locals {
+  user-data_vars = {
+    webmaster = var.webmaster_email
+  }
+
+    user-data = templatefile("${path.module}/user-data.tpl", local.user-data_vars)
+}
+
+
+
 resource "aws_instance" "this" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = var.ec2_size

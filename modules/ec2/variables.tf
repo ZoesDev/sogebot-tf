@@ -39,3 +39,8 @@ variable "subnet_id" {
     description = "Subnet ID to put ec2 in"
     default = "subnet-cc0c60e7"
 }
+
+variable "webmaster_email" {
+    description = "Email of the webmaster for certbot"
+    default = "zoe@itszoes.dev"
+}
