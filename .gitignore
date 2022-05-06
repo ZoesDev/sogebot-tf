@@ -1,4 +1,5 @@
 *.zip
+*.pem
 # Local .terraform directories
 **/.terraform/*
 
