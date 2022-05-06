@@ -43,5 +43,9 @@ No modules.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_ec2-arn"></a> [ec2-arn](#output\_ec2-arn) | arn of the ec2 instance |
+| <a name="output_ec2-public_dns"></a> [ec2-public\_dns](#output\_ec2-public\_dns) | public\_dns of the ec2 instance |
+| <a name="output_ubuntu-ami"></a> [ubuntu-ami](#output\_ubuntu-ami) | AMI used for ec2 instance |
 <!-- END_TF_DOCS -->
