@@ -5,6 +5,9 @@ echo "initial setup"
 sudo apt update
 sudo apt upgrade -y #updating system image to make sure everything is updated
 
+#setup hostname for later
+HOSTNAME=$(curl http://169.254.169.254/latest/meta-data/public-hostname)
+WEBMASTER=
 
 #setup docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
@@ -13,9 +16,8 @@ echo \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update
 
-
 # install packages that will be needed
-sudo apt-get install -y unzip jq nginx certbot python3-certbot-nginx docker-ce docker-compose
+sudo apt-get install -y unzip jq nginx certbot python3-certbot-nginx docker-ce docker-compose awscli
 
 #install sogebot
 echo "install sogebot"
@@ -37,15 +39,21 @@ unzip /tmp/sogebot.zip –d /home/ubuntu/sogebot
 docker-compose -f /home/ubuntu/sogebot/docker-compose.yml
 
 #check if there is a backup file in the s3 db if not skip. will be skipped on frist run as there wont be any backup around
-
+#TODO late
 
 
 #install nginx for proxy
 
 echo "installing nginx and certbot"
+certbot --non-interactive --agree-tos -m test@endofmine.com
+
+certbot --nginx -d $HOSTNAME --redirect
 
 
 
+
+
+#TODO late belose this line
 echo "forwarding logs to cloudwatch for visibility"
 
 
