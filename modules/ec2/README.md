@@ -40,6 +40,7 @@ No modules.
 | <a name="input_root_volume_type"></a> [root\_volume\_type](#input\_root\_volume\_type) | Root volume type | `string` | `"gp3"` | no |
 | <a name="input_subnet_id"></a> [subnet\_id](#input\_subnet\_id) | Subnet ID to put ec2 in | `string` | `"subnet-cc0c60e7"` | no |
 | <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | VPC ID | `string` | `"vpc-487ef730"` | no |
+| <a name="input_webmaster_email"></a> [webmaster\_email](#input\_webmaster\_email) | Email of the webmaster for certbot | `string` | `"zoe@itszoes.dev"` | no |
 
 ## Outputs
 
